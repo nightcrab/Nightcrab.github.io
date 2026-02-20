@@ -1,50 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul Anderson's personal blog</title>
+    <title>Paul Anderson's site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap"
+        rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://esm.sh https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; connect-src 'self' https://api.emailjs.com https://thkldkvnvplcvuzooesn.supabase.co; frame-src 'self' https://www.youtube.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
+
 <body>
-    <div class="blog-container">
-        <div class="top-bar">
-            <div class="wrapper">
-                <a class="site-title no-style" href="/">
-                    Paul Anderson
-                </a>
-                <div class="top-bar-right">
-                    <a class="about no-style" href="/blog.html">
-                        Blog
-                    </a>
-                    <a class="about no-style" href="https://github.com/Nightcrab">
-                        GitHub
-                    </a>
-                    <a class="about no-style" href="/">
-                        About
-                    </a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <span class="material-symbols-outlined light-mode">light_mode</span>
+        <span class="material-symbols-outlined dark-mode">dark_mode</span>
+    </button>
+
+    <div class="container">
+        <div class="mobile-header">
+            <div class="logo">
+                    <img src="assets/images/strip.png" alt="profile" class="profile-image" draggable="false">
+            </div>
+                <div class="name">Paul Anderson</div>
+                    <div class="title">
+                        Fullstack Engineer<br>
+                        HPC, AI and ML research<br>
+                        Web & Game Developer<br>
+                    </div>
+        </div>
+
+        <div class="main-content">
+            <div class="left-content">
+                <div class="logo">
+                    <img src="assets/images/strip.png" alt="profile" class="profile-image" draggable="false">
+                </div>
+                <div class="info">
+                    <div class="name">Paul Anderson</div>
+                    <div class="title">
+                        Fullstack Engineer<br>
+                        HPC, AI and ML research<br>
+                        Web & Game Developer<br>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="#projects" class="sidebar-nav-link">projects</a>
+                    <a href="#experience" class="sidebar-nav-link">experience</a>
+                    <a href="#about" class="sidebar-nav-link">about</a>
+                    <a href="#contact" class="sidebar-nav-link">contact</a>
+                </nav>
+
+                <div class="sidebar-bottom">
+                    <div class="footer desktop-footer">
+                        <a href="https://github.com/nightcrab" class="commit-link"
+                            target="_blank" rel="noopener"><svg class="commit-icon" viewBox="0 0 16 16"
+                                fill="currentColor">
+                                <path
+                                    d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.75a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z">
+                                </path>
+                            </svg>GitHub</a><br>
+                        <span class="copyright-trigger" style="cursor: pointer;">© 2026 Nightcrab</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="right-content">
+
+                <h1 class="hello">hello!</h1>
+
+                <p class="intro">I'm <span class="highlight-name">Paul</span>.<br>I build 
+                    <span class="highlight-besties">full-stack web applications</span> and work on <span
+                        class="highlight-playful">high performance AI algorithms</span>.
+                </p>
+
+                <div class="sections">
+                    <div class="section" id="projects">
+                        <div class="section-header">projects</div>
+                        <div class="section-content">
+                            <div class="section-content-inner">
+                                <div class="project-grid">
+                                    <a href="https://github.com/nightcrab/nana" class="project-card" target="_blank"
+                                        rel="noopener">
+                                        <div class="project-image-wrap">
+                                            <img src="assets/images/nana.png" alt="nana"
+                                                class="project-image" draggable="false">
+                                        </div>
+                                        <div class="project-info">
+                                            <div class="project-name">Nana</div>
+                                            <div class="project-desc">a game-playing AI using parallel tree search, work stealing, bitwise datastructures and Monte Carlo estimation.</div>
+                                            
+                                            
+                                        </div>
+                                    </a>
+                                    <a href="https://godofstackers.com/about" class="project-card" target="_blank" rel="noopener">
+                                        <div class="project-image-wrap">
+                                            <img src="assets/images/gos.png" alt="gos"
+                                                class="project-image padded" draggable="false">
+                                        </div>
+                                        <div class="project-info">
+                                            <div class="project-name">God of Stackers</div>
+                                            <div class="project-desc">a browser-based, real time online video game with more than 1,000 registered players. </div>
+                                            
+                                        </div>
+                                    </a>
+                                    <a href="https://chromewebstore.google.com/detail/how-much-for-a-cup-of-joe/eekhlhcnjglbmhgdmknncpkmblngbmjg" class="project-card" target="_blank" rel="noopener">
+                                        <div class="project-image-wrap">
+                                            <img src="assets/images/coj.png" alt="coj" class="project-image"
+                                                draggable="false">
+                                        </div>
+                                        <div class="project-info">
+                                            <div class="project-name">Cup of Joe</div>
+                                            <div class="project-desc">a Chrome extension for Google Maps that tells you the prices of coffee reported by other users.</div>
+                                                
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="studio-plug">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section" id="experience">
+                    <div class="section-header">experience</div>
+                    <div class="section-content">
+                        <div class="section-content-inner">
+                            <div class="experience-list">
+                            <div class="exp-item">
+                                <div class="exp-header">
+                                    <div class="exp-role">Fullstack Engineer</div>
+                                    <div class="exp-period">2023 - present</div>
+                                </div>
+                                <div class="exp-desc">
+                                    Building modern web applications with an emphasis on performance, scalability and user experience.
+                                </div>
+                                <div class="exp-badges">
+                                    <span class="exp-badge">Web Technology</span>
+                                    <span class="exp-badge">JavaScript/TypeScript</span>
+                                    <span class="exp-badge">Svelte</span>
+                                    <span class="exp-badge">React</span>
+                                    <span class="exp-badge">SQL</span>
+                                    <span class="exp-badge">Redis</span>
+                                    <span class="exp-badge">Node.js</span>
+                                </div>
+                            </div>
+                            <div class="exp-item">
+                                <div class="exp-header">
+                                    <div class="exp-role">AI Researcher</div>
+                                    <div class="exp-period">2022 - present</div>
+                                </div>
+                                <div class="exp-desc">
+                                    Developing high performance AIs and solving algorithms for imperfect information games, with a focus on falling block games. 
+                                </div>
+                                <div class="exp-badges">
+                                    <span class="exp-badge">Parallel Tree Search</span>
+                                    <span class="exp-badge">Self-Play RL</span>
+                                    <span class="exp-badge">Game AI</span>
+                                    <span class="exp-badge">C++</span>
+                                    <span class="exp-badge">Python</span>
+                                    <span class="exp-badge">MCTS</span>
+                                </div>
+                            </div>
+                            <div class="exp-item">
+                                <div class="exp-header">
+                                    <div class="exp-role">Machine Learning Engineer</div>
+                                    <div class="exp-period">2022 - 2024</div>
+                                </div>
+                                <div class="exp-desc">
+                                    Designed and implemented machine learning infrastructure for large-scale model training and deployment.<br><br>
+                                    Early engineer at Ivy, the machine learning framework with 14.2k stars on Github.
+                                </div>
+                                <div class="exp-badges">
+                                    <span class="exp-badge">ML Infrastructure</span>
+                                    <span class="exp-badge">Python</span>
+                                    <span class="exp-badge">PyTorch</span>
+                                    <span class="exp-badge">JAX</span>
+                                    <span class="exp-badge">TensorFlow</span>
+                                    <span class="exp-badge">CUDA</span>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="section" id="about">
+                        <div class="section-header">about</div>
+                        <div class="section-content">
+                            <div class="section-content-inner">
+                                <p>I'm a 22 year old software engineer and HPC enthusiast based in Japan. <br><br>
+
+                                    When I'm not working on software and AI programs,
+                                    
+                                    I enjoy solving mathematical puzzles and researching problems in game theory. <br><br>
+                                    
+                                    I'm also the creator of God of Stackers, a popular online multiplayer video game.<br><br>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section" id="contact">
+                        <div class="section-header">contact</div>
+                        <div class="section-content">
+                            <div class="section-content-inner">
+                                <div class="social-grid">
+                                    <a href="mailto:paul.kr.anderson@gmail.com" class="social-link">
+                                        <span class="social-platform">email</span>
+                                        <span class="social-handle">paul.kr.anderson@gmail.com</span>
+                                    </a>
+                                    <a href="https://github.com/nightcrab" class="social-link" target="_blank"
+                                        rel="noopener">
+                                        <span class="social-platform">github</span>
+                                        <span class="social-handle">@nightcrab</span>
+                                    </a>
+                                    <a href="https://github.com/nightcrab" class="social-link" target="_blank"
+                                        rel="noopener">
+                                        <span class="social-platform">discord</span>
+                                        <span class="social-handle">stripe_dev</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="blog-body" id="content">
-            <script>
-                var requestURL = '/about.md';
-                var request = new XMLHttpRequest();
-                request.open('GET', requestURL);
-                request.responseType = 'txt';
-                request.send();
-                var colours;
-                request.onload = function() {
-                    document.getElementById('content').innerHTML =
-                    marked.parse(request.response);
-                }
-            </script>
-        </div>
-        <div class="footer">
-            
-        </div>
+
     </div>
-    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+
+        function animateHelloText() {
+            const hello = document.querySelector('.hello');
+            if (!hello) return;
+
+            const text = hello.textContent;
+            hello.innerHTML = '';
+
+            const delayIncrement = 0.05;
+
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                if (char === ' ') {
+                    hello.appendChild(document.createTextNode(' '));
+                } else {
+                    const span = document.createElement('span');
+                    span.className = 'letter-blur-slide-top';
+                    span.style.animationDelay = `${i * delayIncrement}s`;
+                    span.textContent = char;
+                    hello.appendChild(span);
+                }
+            }
+        }
+
+
+
+        
+        function toggleVoteDropdown(id = 'vote-dropdown') {
+            document.getElementById(id).classList.toggle('open');
+        }
+
+        const hasPlayedAnimations = localStorage.getItem('animationsPlayed') === 'true';
+
+        if (hasPlayedAnimations) {
+            document.documentElement.classList.add('animations-played');
+        }
+
+        document.documentElement.classList.add('js-initialized');
+
+        function typeText(element, callback) {
+            const items = [];
+
+            function parseNode(node, currentStyles) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    const text = node.textContent;
+                    for (let char of text) {
+                        if (char !== '\n' && char !== '\r') {
+                            items.push({ type: 'char', value: char, styles: [...currentStyles] });
+                        }
+                    }
+                } else if (node.nodeName === 'BR') {
+                    items.push({ type: 'br', styles: [] });
+                } else if (node.nodeType === Node.ELEMENT_NODE) {
+                    const newStyles = [...currentStyles];
+                    if (node.className) {
+                        newStyles.push(node.className);
+                    }
+                    for (let child of node.childNodes) {
+                        parseNode(child, newStyles);
+                    }
+                }
+            }
+
+            for (let child of element.childNodes) {
+                parseNode(child, []);
+            }
+
+            const cleanedItems = [];
+            let lastWasSpace = false;
+            for (let item of items) {
+                if (item.type === 'char' && item.value === ' ') {
+                    if (!lastWasSpace) {
+                        cleanedItems.push(item);
+                        lastWasSpace = true;
+                    }
+                } else {
+                    cleanedItems.push(item);
+                    lastWasSpace = false;
+                }
+            }
+
+            element.innerHTML = '';
+            element.classList.add('typing-ready');
+
+            const cursor = document.createElement('span');
+            cursor.className = 'typing-cursor';
+
+            let itemIndex = 0;
+            let currentSpan = null;
+            let currentStyles = '';
+            const typingSpeed = 30;
+            let typedText = '';
+
+            function typeNextItem() {
+                if (itemIndex < cleanedItems.length) {
+                    const item = cleanedItems[itemIndex];
+                    const itemStyles = item.styles.join(' ');
+
+                    if (item.type === 'br') {
+                        currentSpan = null;
+                        currentStyles = '';
+                        if (cursor.parentNode) cursor.remove();
+                        element.appendChild(document.createElement('br'));
+                        element.appendChild(cursor);
+                        itemIndex++;
+                        setTimeout(typeNextItem, 800);
+                    } else {
+                        if (itemStyles !== currentStyles) {
+                            currentStyles = itemStyles;
+                            if (itemStyles) {
+                                currentSpan = document.createElement('span');
+                                currentSpan.className = itemStyles;
+                                if (cursor.parentNode) cursor.remove();
+                                element.appendChild(currentSpan);
+                            } else {
+                                currentSpan = null;
+                            }
+                        }
+
+                        if (cursor.parentNode) cursor.remove();
+
+                        if (currentSpan) {
+                            currentSpan.appendChild(document.createTextNode(item.value));
+                            element.appendChild(cursor);
+                        } else {
+                            element.appendChild(document.createTextNode(item.value));
+                            element.appendChild(cursor);
+                        }
+
+                        typedText += item.value;
+                        itemIndex++;
+                        setTimeout(typeNextItem, typingSpeed);
+                    }
+                } else {
+                    setTimeout(() => {
+                        cursor.remove();
+                        if (callback) callback();
+                    }, 400);
+                }
+            }
+
+            element.appendChild(cursor);
+            setTimeout(typeNextItem, 100);
+        }
+
+        function animateSections(callback) {
+            const sections = document.querySelectorAll('.sections .section');
+            let index = 0;
+
+            function showNextSection() {
+                if (index < sections.length) {
+                    const section = sections[index];
+                    section.style.height = 'auto';
+                    section.style.overflow = 'visible';
+                    section.style.margin = '';
+                    section.style.padding = '';
+                    section.style.visibility = 'visible';
+                    requestAnimationFrame(() => {
+                        section.classList.remove('typing-hidden');
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    });
+                    index++;
+                    setTimeout(showNextSection, 200);
+                } else {
+                    const mobileFooter = document.querySelector('.mobile-footer');
+                    if (mobileFooter) {
+                        setTimeout(() => {
+                            mobileFooter.classList.add('revealed');
+                        }, 100);
+                    }
+                    if (callback) callback();
+                }
+            }
+
+            showNextSection();
+        }
+
+        function startAnimationSequence() {
+            const intro = document.querySelector('.intro');
+            const sections = document.querySelectorAll('.sections .section');
+            const mobileFooter = document.querySelector('.mobile-footer');
+
+            if (intro) {
+                intro.style.opacity = '1';
+            }
+
+            sections.forEach(s => {
+                s.classList.remove('typing-hidden');
+                s.style.opacity = '1';
+                s.style.transform = 'translateY(0)';
+                s.style.visibility = 'visible';
+                s.style.height = 'auto';
+            });
+
+            if (mobileFooter) {
+                mobileFooter.classList.add('revealed');
+            }
+        }
+
+        function triggerTypingAnimation() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            setTimeout(() => {
+                const intro = document.querySelector('.intro');
+                const sectionsContainer = document.querySelector('.sections');
+                const sections = document.querySelectorAll('.sections .section');
+
+                const introContent = intro ? intro.innerHTML : '';
+                if (intro) {
+                    intro.innerHTML = '';
+                    intro.classList.add('typing-ready');
+                }
+
+                sections.forEach(s => {
+                    s.classList.add('typing-hidden');
+                    s.style.opacity = '0';
+                    s.style.transform = 'translateY(15px)';
+                });
+                if (sectionsContainer) {
+                    sectionsContainer.classList.add('typing-ready');
+                }
+
+                animateHelloText();
+
+                const helloAnimDuration = 6 * 50 + 600 + 200;
+
+                setTimeout(() => {
+                    if (intro && introContent) {
+                        intro.innerHTML = introContent;
+                        typeText(intro, () => {
+                            setTimeout(() => {
+                                animateSections();
+                            }, 200);
+                        });
+                    }
+                }, helloAnimDuration);
+            }, 500);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', startAnimationSequence);
+        } else {
+            startAnimationSequence();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.copyright-trigger').forEach(el => {
+                el.addEventListener('click', triggerTypingAnimation);
+            });
+        });
+
+        (function () {
+            const leftContentLogo = document.querySelector('.left-content .logo');
+            let ticking = false;
+
+            function handleScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        const scrollY = window.scrollY;
+                        if (scrollY > 50) {
+                            leftContentLogo?.classList.add('scrolled');
+                        } else {
+                            leftContentLogo?.classList.remove('scrolled');
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+        })();
+    </script>
+
 </body>
+
 </html>

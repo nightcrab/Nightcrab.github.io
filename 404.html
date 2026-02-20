@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - page not found</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap"
+        rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+    <link rel="icon" href="/assets/favicon/favicon-light.png" type="image/x-icon" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="/assets/favicon/favicon-dark.png" type="image/x-icon" media="(prefers-color-scheme: dark)">
+
+    <style>
+        :root {
+            --bg-primary: #fffbf4;
+            --text-primary: #1d2126;
+            --text-secondary: #666;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #1a1d21;
+            --text-primary: #e8e6e3;
+            --text-secondary: #a8a8a8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        *::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            font-synthesis: none;
+        }
+
+        body {
+            font-family: 'Cascadia Code', 'Cascadia Mono', --apple-ui-monospace, --ui-monospace,
+                'Inconsolata', 'Consolas', 'Courier', monospace;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            opacity: 0;
+            transition: color 0.3s ease;
+        }
+
+        .error-message {
+            font-size: 2rem;
+            font-family: 'Cascadia Code', 'Cascadia Mono', --apple-ui-monospace, --ui-monospace,
+                'Inconsolata', 'Consolas', 'Courier', monospace;
+            font-feature-settings: "ss01" 1, "calt" 1;
+            font-style: italic;
+            font-weight: 700;
+            margin-bottom: 20px;
+            opacity: 0;
+            transition: color 0.3s ease;
+        }
+
+        .error-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            opacity: 0;
+            transition: color 0.3s ease;
+        }
+
+        .home-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0;
+            padding: 0;
+            background: transparent;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: font-weight 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
+            opacity: 0;
+        }
+
+        .home-link::after {
+            content: " ->";
+            font-variant-ligatures: none;
+            font-weight: 400;
+            letter-spacing: -7.2px;
+            padding: 0 4px;
+            transition: letter-spacing 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .home-link:hover {
+            font-weight: 700;
+        }
+
+        .home-link:hover::after {
+            letter-spacing: 0.15em;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .error-code.animate-in {
+            animation-delay: 0.1s;
+        }
+
+        .error-message.animate-in {
+            animation-delay: 0.3s;
+        }
+
+        .error-description.animate-in {
+            animation-delay: 0.5s;
+        }
+
+        .home-link.animate-in {
+            animation-delay: 0.7s;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .error-code {
+                font-size: 5rem;
+            }
+
+            .error-message {
+                font-size: 1.5rem;
+            }
+
+            .error-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="error-code">404</div>
+        <h1 class="error-message">oops!</h1>
+        <p class="error-description">couldn't find this page.</p>
+        <a href="/" class="home-link">take me home</a>
+    </div>
+
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.error-code, .error-message, .error-description, .home-link');
+            elements.forEach(el => el.classList.add('animate-in'));
+        });
+    </script>
+</body>
+
+</html>
