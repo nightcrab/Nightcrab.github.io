@@ -39,7 +39,7 @@
     --surface-hover: #eee;
     --highlight-pink: #2c3aff;
     --highlight-orange: #ff4747;
-    --highlight-blue: #ff8f44;
+    --highlight-blue: #f30909;
     --popup-overlay: rgba(29, 33, 38, 0.4);
 }
 
@@ -234,8 +234,8 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
     padding: 0;
     background: var(--surface);
     border: 1px solid var(--border-color);
