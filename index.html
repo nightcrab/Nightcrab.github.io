@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://esm.sh https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; connect-src 'self' https://api.emailjs.com https://thkldkvnvplcvuzooesn.supabase.co; frame-src 'self' https://www.youtube.com;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -26,14 +27,18 @@
         <span class="material-symbols-outlined dark-mode">dark_mode</span>
     </button>
 
+    <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle language" style="position: fixed; top: 1rem; right: 4rem; z-index: 1000; background: transparent; border: 1px solid currentColor; color: inherit; padding: 0.4rem 0.7rem; border-radius: 0.4rem; cursor: pointer; font-family: inherit; font-size: 0.85rem; opacity: 0.7;">
+        <span class="lang-label">日本語 / EN</span>
+    </button>
+
     <div class="container">
         <div class="mobile-header">
             <div class="logo">
                     <img src="assets/images/strip.png" alt="profile" class="profile-image" draggable="false">
             </div>
             <div>
-                <div class="name">Paul Anderson</div>
-                <div class="title">
+                <div class="name" data-en="Paul Anderson" data-ja="ポール・アンダーソン">Paul Anderson</div>
+                <div class="title" data-en="Fullstack Engineer<br>HPC, AI and ML research<br>Web &amp; Game Developer<br>" data-ja="フルスタックエンジニア<br>HPC・AI・機械学習研究<br>ウェブ＆ゲーム開発者<br>">
                     Fullstack Engineer<br>
                     HPC, AI and ML research<br>
                     Web & Game Developer<br>
@@ -47,8 +52,8 @@
                     <img src="assets/images/strip.png" alt="profile" class="profile-image" draggable="false">
                 </div>
                 <div class="info">
-                    <div class="name">Paul Anderson</div>
-                    <div class="title">
+                    <div class="name" data-en="Paul Anderson" data-ja="ポール・アンダーソン">Paul Anderson</div>
+                    <div class="title" data-en="Fullstack Engineer<br>HPC, AI and ML research<br>Web &amp; Game Developer<br>" data-ja="フルスタックエンジニア<br>HPC・AI・機械学習研究<br>ウェブ＆ゲーム開発者<br>">
                         Fullstack Engineer<br>
                         HPC, AI and ML research<br>
                         Web & Game Developer<br>
@@ -56,10 +61,10 @@
                 </div>
 
                 <nav class="sidebar-nav">
-                    <a href="#projects" class="sidebar-nav-link">projects</a>
-                    <a href="#experience" class="sidebar-nav-link">experience</a>
-                    <a href="#about" class="sidebar-nav-link">about</a>
-                    <a href="#contact" class="sidebar-nav-link">contact</a>
+                    <a href="#projects" class="sidebar-nav-link" data-en="projects" data-ja="プロジェクト">projects</a>
+                    <a href="#experience" class="sidebar-nav-link" data-en="experience" data-ja="経歴">experience</a>
+                    <a href="#about" class="sidebar-nav-link" data-en="about" data-ja="自己紹介">about</a>
+                    <a href="#contact" class="sidebar-nav-link" data-en="contact" data-ja="お問い合わせ">contact</a>
                 </nav>
 
                 <div class="sidebar-bottom">
@@ -72,16 +77,16 @@
 
             <div class="right-content">
 
-                <h1 class="hello">hello!</h1>
+                <h1 class="hello" data-en="hello!" data-ja="こんにちは！">hello!</h1>
 
-                <p class="intro">I'm <span class="highlight-name">Paul</span> (nightcrab).<br>I build 
+                <p class="intro" data-en='I&#39;m <span class="highlight-name">Paul</span> (nightcrab).<br>I build <span class="highlight-besties">full-stack web applications</span> and work on <span class="highlight-playful">high performance AI algorithms</span>.' data-ja='私は<span class="highlight-name">ポール</span>（nightcrab）です。<br><span class="highlight-besties">フルスタックのウェブアプリケーション</span>を構築し、<span class="highlight-playful">高性能AIアルゴリズム</span>の開発に取り組んでいます。'>I'm <span class="highlight-name">Paul</span> (nightcrab).<br>I build 
                     <span class="highlight-besties">full-stack web applications</span> and work on <span
                         class="highlight-playful">high performance AI algorithms</span>.
                 </p>
 
                 <div class="sections">
                     <div class="section" id="projects">
-                        <div class="section-header">projects</div>
+                        <div class="section-header" data-en="projects" data-ja="プロジェクト">projects</div>
                         <div class="section-content">
                             <div class="section-content-inner">
                                 <div class="project-grid">
@@ -92,8 +97,8 @@
                                                 class="project-image" draggable="false">
                                         </div>
                                         <div class="project-info">
-                                            <div class="project-name">Nana</div>
-                                            <div class="project-desc">a game-playing AI using parallel tree search, work stealing, bitwise datastructures and Monte Carlo estimation.</div>
+                                            <div class="project-name" data-en="Nana" data-ja="Nana">Nana</div>
+                                            <div class="project-desc" data-en="a game-playing AI using parallel tree search, work stealing, bitwise datastructures and Monte Carlo estimation." data-ja="並列ツリー探索、ワークスティーリング、ビット演算データ構造、モンテカルロ推定を用いたゲームAI。">a game-playing AI using parallel tree search, work stealing, bitwise datastructures and Monte Carlo estimation.</div>
                                             
                                             
                                         </div>
@@ -104,8 +109,8 @@
                                                 class="project-image padded" draggable="false">
                                         </div>
                                         <div class="project-info">
-                                            <div class="project-name">God of Stackers</div>
-                                            <div class="project-desc">a browser-based, real time online video game with more than 1,000 registered players. </div>
+                                            <div class="project-name" data-en="God of Stackers" data-ja="God of Stackers">God of Stackers</div>
+                                            <div class="project-desc" data-en="a browser-based, real time online video game with more than 1,000 registered players." data-ja="1,000人以上の登録プレイヤーを持つ、ブラウザベースのリアルタイムオンラインゲーム。">a browser-based, real time online video game with more than 1,000 registered players. </div>
                                             
                                         </div>
                                     </a>
@@ -115,8 +120,8 @@
                                                 draggable="false">
                                         </div>
                                         <div class="project-info">
-                                            <div class="project-name">Cup of Joe</div>
-                                            <div class="project-desc">a Chrome extension for Google Maps that tells you the prices of coffee reported by other users.</div>
+                                            <div class="project-name" data-en="Cup of Joe" data-ja="Cup of Joe">Cup of Joe</div>
+                                            <div class="project-desc" data-en="a Chrome extension for Google Maps that tells you the prices of coffee reported by other users." data-ja="他のユーザーが報告したコーヒーの価格をGoogleマップ上で表示するChrome拡張機能。">a Chrome extension for Google Maps that tells you the prices of coffee reported by other users.</div>
                                                 
                                         </div>
                                     </a>
@@ -128,16 +133,16 @@
                     </div>
 
                     <div class="section" id="experience">
-                    <div class="section-header">experience</div>
+                    <div class="section-header" data-en="experience" data-ja="経歴">experience</div>
                     <div class="section-content">
                         <div class="section-content-inner">
                             <div class="experience-list">
                             <div class="exp-item">
                                 <div class="exp-header">
-                                    <div class="exp-role">Fullstack Engineer</div>
-                                    <div class="exp-period">2023 - present</div>
+                                    <div class="exp-role" data-en="Fullstack Engineer" data-ja="フルスタックエンジニア">Fullstack Engineer</div>
+                                    <div class="exp-period" data-en="2023 - present" data-ja="2023年 - 現在">2023 - present</div>
                                 </div>
-                                <div class="exp-desc">
+                                <div class="exp-desc" data-en="Building modern web applications with an emphasis on performance, scalability and user experience." data-ja="パフォーマンス、スケーラビリティ、ユーザー体験を重視したモダンなウェブアプリケーションの構築。">
                                     Building modern web applications with an emphasis on performance, scalability and user experience.
                                 </div>
                                 <div class="exp-badges">
@@ -152,10 +157,10 @@
                             </div>
                             <div class="exp-item">
                                 <div class="exp-header">
-                                    <div class="exp-role">AI Researcher</div>
-                                    <div class="exp-period">2022 - present</div>
+                                    <div class="exp-role" data-en="AI Researcher" data-ja="AI研究者">AI Researcher</div>
+                                    <div class="exp-period" data-en="2022 - present" data-ja="2022年 - 現在">2022 - present</div>
                                 </div>
-                                <div class="exp-desc">
+                                <div class="exp-desc" data-en="Developing high performance AIs and solving algorithms for imperfect information games, with a focus on falling block games." data-ja="不完全情報ゲームの高性能AIとアルゴリズムを開発。落ちものパズルゲームを中心に研究。">
                                     Developing high performance AIs and solving algorithms for imperfect information games, with a focus on falling block games. 
                                 </div>
                                 <div class="exp-badges">
@@ -169,10 +174,10 @@
                             </div>
                             <div class="exp-item">
                                 <div class="exp-header">
-                                    <div class="exp-role">Machine Learning Engineer</div>
-                                    <div class="exp-period">2022 - 2024</div>
+                                    <div class="exp-role" data-en="Machine Learning Engineer" data-ja="機械学習エンジニア">Machine Learning Engineer</div>
+                                    <div class="exp-period" data-en="2022 - 2024" data-ja="2022年 - 2024年">2022 - 2024</div>
                                 </div>
-                                <div class="exp-desc">
+                                <div class="exp-desc" data-en="Designed and implemented machine learning infrastructure for large-scale model training and deployment.<br><br>Early engineer at Ivy, the machine learning framework with 14.2k stars on Github." data-ja="大規模モデルの学習・デプロイのための機械学習インフラの設計と実装を担当。<br><br>GitHubで14.2kスターを獲得した機械学習フレームワーク Ivy の初期エンジニア。">
                                     Designed and implemented machine learning infrastructure for large-scale model training and deployment.<br><br>
                                     Early engineer at Ivy, the machine learning framework with 14.2k stars on Github.
                                 </div>
@@ -193,10 +198,10 @@
                 </div>
 
                     <div class="section" id="about">
-                        <div class="section-header">about</div>
+                        <div class="section-header" data-en="about" data-ja="自己紹介">about</div>
                         <div class="section-content">
                             <div class="section-content-inner">
-                                <p>I'm a 22 year old software engineer and HPC enthusiast based in Japan. <br><br>
+                                <p data-en="I&#39;m a 22 year old software engineer and HPC enthusiast based in Japan. <br><br>When I&#39;m not working on software and AI programs, I enjoy solving mathematical puzzles and researching problems in game theory. <br><br>I&#39;m also the creator of God of Stackers, a popular online multiplayer video game.<br><br>" data-ja="私は日本在住の22歳のソフトウェアエンジニアで、HPC（高性能計算）に情熱を注いでいます。<br><br>ソフトウェアやAIプログラムに取り組んでいないときは、数学パズルを解いたり、ゲーム理論の問題を研究したりするのが好きです。<br><br>また、人気のオンラインマルチプレイヤーゲーム「God of Stackers」の制作者でもあります。<br><br>">I'm a 22 year old software engineer and HPC enthusiast based in Japan. <br><br>
 
                                     When I'm not working on software and AI programs,
                                     
@@ -210,22 +215,22 @@
                     </div>
 
                     <div class="section" id="contact">
-                        <div class="section-header">contact</div>
+                        <div class="section-header" data-en="contact" data-ja="お問い合わせ">contact</div>
                         <div class="section-content">
                             <div class="section-content-inner">
                                 <div class="social-grid">
                                     <a href="mailto:paul.kr.anderson@gmail.com" class="social-link">
-                                        <span class="social-platform">email</span>
+                                        <span class="social-platform" data-en="email" data-ja="メール">email</span>
                                         <span class="social-handle">paul.kr.anderson@gmail.com</span>
                                     </a>
                                     <a href="https://github.com/nightcrab" class="social-link" target="_blank"
                                         rel="noopener">
-                                        <span class="social-platform">github</span>
+                                        <span class="social-platform" data-en="github" data-ja="GitHub">github</span>
                                         <span class="social-handle">@nightcrab</span>
                                     </a>
                                     <a href="https://github.com/nightcrab" class="social-link" target="_blank"
                                         rel="noopener">
-                                        <span class="social-platform">discord</span>
+                                        <span class="social-platform" data-en="discord" data-ja="Discord">discord</span>
                                         <span class="social-handle">stripe_dev</span>
                                     </a>
                                 </div>
@@ -256,6 +261,33 @@
             
             if (theme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+
+        function applyLanguage(lang) {
+            document.documentElement.setAttribute('lang', lang === 'ja' ? 'ja' : 'en');
+            const label = document.querySelector('.lang-label');
+            if (label) label.textContent = lang === 'ja' ? 'EN / 日本語' : '日本語 / EN';
+
+            document.querySelectorAll('[data-en][data-ja]').forEach(el => {
+                const value = el.getAttribute('data-' + lang);
+                if (value !== null) el.innerHTML = value;
+            });
+        }
+
+        function toggleLanguage() {
+            const current = localStorage.getItem('lang') || 'en';
+            const next = current === 'en' ? 'ja' : 'en';
+            localStorage.setItem('lang', next);
+            applyLanguage(next);
+        }
+
+        (function() {
+            const savedLang = localStorage.getItem('lang') || 'en';
+            if (savedLang === 'ja') {
+                document.addEventListener('DOMContentLoaded', () => applyLanguage('ja'));
+            } else {
+                document.addEventListener('DOMContentLoaded', () => applyLanguage('en'));
             }
         })();
 
